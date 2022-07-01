@@ -399,6 +399,8 @@ public class CodeCovServiceImpl implements CodeCovService {
                     } catch (Exception e) {
                         coverageReport.setRequestStatus(Constants.JobStatus.ENVREPORT_FAIL.val());
                         coverageReport.setErrMsg("解析jacoco报告失败");
+                        log.info("=============================================");
+                        log.error("异常信息",e);
                         log.error("uuid={}", coverageReport.getUuid(), e.getMessage());
                     }
                 } else {
